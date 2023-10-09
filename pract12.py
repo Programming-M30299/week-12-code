@@ -7,37 +7,46 @@ class LoginApp:
         self.win.title("Employee Login")
         self.win.geometry("250x100")
 
-        self.mainframe = Frame(self.win)
-        self.mainframe.grid(column=0, row=0)
+        self.mainFrame = Frame(self.win)
+        self.mainFrame.grid(column=0, row=0)
 
-        self.username = StringVar()
+        self.userName = StringVar()
         self.password = StringVar()
         self.message = StringVar()
         self.message.set("Enter username and password.")
 
-        self.create_widgets()
+        self.createWidgets()
 
         self.win.mainloop()
 
-    def create_widgets(self):
-        Label(self.mainframe, textvariable=self.message, width=30).grid(
-            column=1, row=0, columnspan=2)
+    def createWidgets(self):
+        lblMessage = Label(self.mainFrame, textvariable=self.message, width=30)
+        lblMessage.grid(column=1, row=0, columnspan=2)
 
-        Label(self.mainframe, text="Username:").grid(column=1, row=1)
-        Entry(self.mainframe, width=25,
-              textvariable=self.username).grid(column=2, row=1)
+        lblUserName = Label(self.mainFrame, text="Username:")
+        lblUserName.grid(column=1, row=1)
 
-        Label(self.mainframe, text="Password:").grid(column=1, row=2)
-        Entry(self.mainframe, width=25, textvariable=self.password,
-              show='*').grid(column=2, row=2)
+        entryUserName = Entry(self.mainFrame, width=25,
+                              textvariable=self.userName)
+        entryUserName.grid(column=2, row=1)
 
-        Button(self.mainframe, text="Sign in",
-               command=self.authenticate).grid(column=1, row=3)
-        Button(self.mainframe, text="Cancel",
-               command=self.win.quit).grid(column=2, row=3)
+        lblPassword = Label(self.mainFrame, text="Password:")
+        lblPassword.grid(column=1, row=2)
+
+        entryPassword = Entry(self.mainFrame, width=25,
+                              textvariable=self.password, show='*')
+        entryPassword.grid(column=2, row=2)
+
+        btnSignIn = Button(self.mainFrame, text="Sign In",
+                           command=self.authenticate)
+        btnSignIn.grid(column=1, row=3)
+
+        btnCancel = Button(self.mainFrame, text="Cancel",
+                           command=self.win.quit)
+        btnCancel.grid(column=2, row=3)
 
     def authenticate(self):
-        username = self.username.get()
+        username = self.userName.get()
         password = self.password.get()
 
         loginDetails = {
