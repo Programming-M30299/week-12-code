@@ -1,40 +1,55 @@
-def sayHello():
-    print("Hello World")
+import tkinter as tk
+from tkinter import ttk
 
+class LoginApp:
+    def __init__(self, master):
+        self.master = master
+        self.master.title("Employee Login")
+        
+        self.mainframe = ttk.Frame(self.master, padding="3 3 12 12")
+        self.mainframe.grid(column=0, row=0, sticky=(tk.N, tk.W, tk.E, tk.S))
+        
+        self.username = tk.StringVar()
+        self.password = tk.StringVar()
+        self.message = tk.StringVar()
+        self.message.set("Please enter your username and password then sign in")
+        
+        self.create_widgets()
+    
+    def create_widgets(self):
+        ttk.Label(self.mainframe, textvariable=self.message).grid(column=1, row=0, columnspan=2, sticky=tk.W)
 
-def sayHello2():
-    print("Hello")
-    print("World")
+        ttk.Label(self.mainframe, text="Username:").grid(column=1, row=1, sticky=tk.W)
+        ttk.Entry(self.mainframe, width=20, textvariable=self.username).grid(column=2, row=1, sticky=(tk.W, tk.E))
+        
+        ttk.Label(self.mainframe, text="Password:").grid(column=1, row=2, sticky=tk.W)
+        ttk.Entry(self.mainframe, width=20, textvariable=self.password, show='*').grid(column=2, row=2, sticky=(tk.W, tk.E))
+        
+        ttk.Button(self.mainframe, text="Sign In", command=self.authenticate).grid(column=1, row=3, sticky=tk.W)
+        ttk.Button(self.mainframe, text="Cancel", command=self.master.quit).grid(column=2, row=3, sticky=tk.W)
 
-
-def sayBye():
-    print("Goodbye Mars")
-
-
-# TODO: Write `sayBye2` function here
-
-
-# A simple kilograms to ounces conversion program
-# It asks for a weight in kilograms (for example 10)
-# and converts it to ounces (352.74)
-def kilos2Ounces():
-    kilos = float(input("Enter a weight in kilograms: "))
-    ounces = kilos * 35.274
-    print("The weight in ounces is", ounces)
-
-
-def count():
-    for number in range(10):
-        print("Number is now: ", number)
-
-
-# A simple euros to pounds conversion program
-# It asks for a value in euros (for example 10)
-# and converts it to pounds (8.7)
-def euros2Pounds():
-    euros = float(input("Enter a value in euros: "))
-    pounds = euros * 0.87
-    print("The value in pounds is", pounds)
-
-
-# TODO: Write `dollars2Pounds` and the rest of your solutions for the programming exercises here
+        for child in self.mainframe.winfo_children(): 
+            child.grid_configure(padx=5, pady=5)
+            
+    def authenticate(self):
+        username = self.username.get()
+        password = self.password.get()
+        
+        loginDetails = {
+            "YousefD": "VenterboSS",
+            "SergeiT": "25Operyu",
+            "Yemi": "Idec704",
+            "WernerS": "IAmMel12"
+        }
+        
+        if username not in loginDetails:
+            self.message.set("Username not found")
+        elif loginDetails[username] != password:
+            self.message.set("Incorrect password")
+        else:
+            self.message.set("Login successful!")
+    
+if __name__ == '__main__':
+    root = tk.Tk()
+    app = LoginApp(root)
+    root.mainloop()
