@@ -35,8 +35,8 @@ class LoginApp:
         ttk.Button(self.mainframe, text="Cancel",
                    command=self.master.quit).grid(column=2, row=3)
 
-        # for child in self.mainframe.winfo_children():
-        #     child.grid_configure(padx=5, pady=5)
+        for child in self.mainframe.winfo_children():
+            child.grid_configure(padx=5, pady=5)
 
     def authenticate(self):
         username = self.username.get()
