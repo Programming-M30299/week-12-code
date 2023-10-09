@@ -53,7 +53,7 @@ class LoginApp:
             self.message.set("Login successful!")
 
 
-if __name__ == '__main__':
+def main():
     root = tk.Tk()
     app = LoginApp(root)
     root.mainloop()
