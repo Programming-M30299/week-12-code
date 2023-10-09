@@ -2,52 +2,58 @@ from tkinter import *
 
 
 class MultiplicationCalculator:
-    def __init__(self, win):
-        self.win = win
+    def __init__(self):
+        self.win = Tk()
         self.win.title("Multiplication Calculator")
 
-        self.mainframe = Frame(self.win)
-        self.mainframe.grid(column=0, row=0)
+        self.mainFrame = Frame(self.win)
+        self.mainFrame.pack(padx=10, pady=10)
 
-        self.num1 = StringVar()
-        self.num2 = StringVar()
+        self.buttonFrame = Frame(self.mainFrame)  # Frame for buttons
+        self.buttonFrame.pack(side="bottom", fill="x", padx=5, pady=5)
+
+        self.num1 = IntVar()
+        self.num2 = IntVar()
         self.result = StringVar()
-        self.result.set("Result will be shown here.")
+        self.result.set("Result will be here.")
 
-        self.create_widgets()
+        self.createWidgets()
 
-    def create_widgets(self):
-        Label(self.mainframe, text="Number 1:").grid(column=1, row=1)
-        Entry(self.mainframe, width=20,
-              textvariable=self.num1).grid(column=2, row=1)
+        self.win.mainloop()
 
-        Label(self.mainframe, text="Number 2:").grid(column=1, row=2)
-        Entry(self.mainframe, width=20,
-              textvariable=self.num2).grid(column=2, row=2)
+    def createWidgets(self):
+        lblNum1 = Label(self.mainFrame, text="Number 1:")
+        lblNum1.pack(side="top", anchor="w")
 
-        Button(self.mainframe, text="Multiply",
-               command=self.multiply).grid(column=1, row=3)
-        Button(self.mainframe, text="Clear",
-               command=self.clear).grid(column=2, row=3)
+        entryNum1 = Entry(self.mainFrame, width=20, textvariable=self.num1)
+        entryNum1.pack(side="top", anchor="w")
 
-        Label(self.mainframe, textvariable=self.result).grid(
-            column=1, row=4, columnspan=2)
+        lblNum2 = Label(self.mainFrame, text="Number 2:")
+        lblNum2.pack(side="top", anchor="w")
+
+        entryNum2 = Entry(self.mainFrame, width=20, textvariable=self.num2)
+        entryNum2.pack(side="top", anchor="w")
+
+        lblResult = Label(self.mainFrame, textvariable=self.result)
+        lblResult.pack(side="top", anchor="w")
+
+        btnMultiply = Button(self.buttonFrame, text="Multiply",
+                             command=self.multiply)
+        btnMultiply.pack(side="left")
+
+        btnClear = Button(self.buttonFrame, text="Clear",
+                          command=self.clear)
+        btnClear.pack(side="right")
 
     def multiply(self):
-        num1 = float(self.num1.get())
-        num2 = float(self.num2.get())
+        num1 = self.num1.get()
+        num2 = self.num2.get()
         self.result.set(f"Result: {num1 * num2}")
 
     def clear(self):
-        self.num1.set("")
-        self.num2.set("")
-        self.result.set("Result will be shown here.")
+        self.num1.set(0)
+        self.num2.set(0)
+        self.result.set("Result will be here.")
 
 
-def main():
-    root = Tk()
-    app = MultiplicationCalculator(root)
-    root.mainloop()
-
-
-main()
+app = MultiplicationCalculator()
