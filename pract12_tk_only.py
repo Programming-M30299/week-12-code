@@ -2,11 +2,11 @@ import tkinter as tk
 
 
 class LoginApp:
-    def __init__(self, master):
-        self.master = master
-        self.master.title("Employee Login")
+    def __init__(self, win):
+        self.win = win
+        self.win.title("Employee Login")
 
-        self.mainframe = tk.Frame(self.master)
+        self.mainframe = tk.Frame(self.win)
         self.mainframe.grid(column=0, row=0)
 
         self.username = tk.StringVar()
@@ -32,7 +32,7 @@ class LoginApp:
         tk.Button(self.mainframe, text="Sign In",
                   command=self.authenticate).grid(column=1, row=3)
         tk.Button(self.mainframe, text="Cancel",
-                  command=self.master.quit).grid(column=2, row=3)
+                  command=self.win.quit).grid(column=2, row=3)
 
     def authenticate(self):
         username = self.username.get()
