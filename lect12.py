@@ -4,7 +4,7 @@ from tkinter import *
 class Calculator:
     def __init__(self):
         self.win = Tk()
-        self.win.title("Multiplication Calculator")
+        self.win.title("Calculator")
 
         self.mainFrame = Frame(self.win)
         self.mainFrame.pack(padx=10, pady=10)
