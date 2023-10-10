@@ -1,7 +1,7 @@
 from tkinter import *
 
 
-class MultiplicationCalculator:
+class Calculator:
     def __init__(self):
         self.win = Tk()
         self.win.title("Multiplication Calculator")
@@ -56,4 +56,4 @@ class MultiplicationCalculator:
         self.result.set("Result will be here.")
 
 
-app = MultiplicationCalculator()
+app = Calculator()
