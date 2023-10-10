@@ -5,6 +5,7 @@ class Calculator:
     def __init__(self):
         self.win = Tk()
         self.win.title("Calculator")
+        self.win.geometry("200x150")
 
         self.mainFrame = Frame(self.win)
         self.mainFrame.pack(padx=10, pady=10)
