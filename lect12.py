@@ -10,9 +10,6 @@ class Calculator:
         self.mainFrame = Frame(self.win)
         self.mainFrame.pack(padx=10, pady=10)
 
-        self.buttonFrame = Frame(self.mainFrame)  # Frame for buttons
-        self.buttonFrame.pack(side="bottom", fill="x", padx=5, pady=5)
-
         self.num1 = IntVar()
         self.num2 = IntVar()
         self.result = StringVar()
@@ -38,11 +35,11 @@ class Calculator:
         lblResult = Label(self.mainFrame, textvariable=self.result)
         lblResult.pack(side="top", anchor="w")
 
-        btnMultiply = Button(self.buttonFrame, text="Multiply",
+        btnMultiply = Button(self.mainFrame, text="Multiply",
                              command=self.multiply)
         btnMultiply.pack(side="left")
 
-        btnClear = Button(self.buttonFrame, text="Clear",
+        btnClear = Button(self.mainFrame, text="Clear",
                           command=self.clear)
         btnClear.pack(side="right")
 
