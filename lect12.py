@@ -23,24 +23,41 @@ class Calculator:
         lblNum1 = Label(self.mainFrame, text="Number 1:")
         lblNum1.pack()
 
-        entryNum1 = Entry(self.mainFrame, width=20, textvariable=self.num1)
+        entryNum1 = Entry(
+            self.mainFrame,
+            width=20,
+            textvariable=self.num1
+        )
         entryNum1.pack()
 
         lblNum2 = Label(self.mainFrame, text="Number 2:")
         lblNum2.pack()
 
-        entryNum2 = Entry(self.mainFrame, width=20, textvariable=self.num2)
+        entryNum2 = Entry(
+            self.mainFrame,
+            width=20,
+            textvariable=self.num2
+        )
         entryNum2.pack()
 
-        lblResult = Label(self.mainFrame, textvariable=self.result)
+        lblResult = Label(
+            self.mainFrame,
+            textvariable=self.result
+        )
         lblResult.pack()
 
-        btnMultiply = Button(self.mainFrame, text="Multiply",
-                             command=self.multiply)
+        btnMultiply = Button(
+            self.mainFrame,
+            text="Multiply",
+            command=self.multiply
+        )
         btnMultiply.pack(side="left")
 
-        btnClear = Button(self.mainFrame, text="Close",
-                          command=self.win.quit)
+        btnClear = Button(
+            self.mainFrame,
+            text="Close",
+            command=self.win.quit
+        )
         btnClear.pack(side="right")
 
     def multiply(self):
