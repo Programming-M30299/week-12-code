@@ -55,7 +55,7 @@ class Calculator:
 
         btnClear = Button(
             self.mainFrame,
-            text="Close",
+            text="Clear",
             command=self.win.quit
         )
         btnClear.pack(side="right")
