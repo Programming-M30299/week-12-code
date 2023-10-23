@@ -20,29 +20,52 @@ class LoginApp:
         self.win.mainloop()
 
     def createWidgets(self):
-        lblMessage = Label(self.mainFrame, textvariable=self.message, width=30)
+        lblMessage = Label(
+            self.mainFrame,
+            textvariable=self.message,
+            width=30
+        )
         lblMessage.grid(column=0, row=0, columnspan=2)
 
-        lblUserName = Label(self.mainFrame, text="Username:")
+        lblUserName = Label(
+            self.mainFrame,
+            text="Username:"
+        )
         lblUserName.grid(column=0, row=1)
 
-        entryUserName = Entry(self.mainFrame, width=25,
-                              textvariable=self.userName)
+        entryUserName = Entry(
+            self.mainFrame,
+            width=25,
+            textvariable=self.userName
+        )
         entryUserName.grid(column=1, row=1)
 
-        lblPassword = Label(self.mainFrame, text="Password:")
+        lblPassword = Label(
+            self.mainFrame,
+            text="Password:"
+        )
         lblPassword.grid(column=0, row=2)
 
-        entryPassword = Entry(self.mainFrame, width=25,
-                              textvariable=self.password, show='*')
+        entryPassword = Entry(
+            self.mainFrame,
+            width=25,
+            textvariable=self.password,
+            show='*'
+        )
         entryPassword.grid(column=1, row=2)
 
-        btnSignIn = Button(self.mainFrame, text="Sign In",
-                           command=self.authenticate)
+        btnSignIn = Button(
+            self.mainFrame,
+            text="Sign In",
+            command=self.authenticate
+        )
         btnSignIn.grid(column=0, row=3)
 
-        btnCancel = Button(self.mainFrame, text="Cancel",
-                           command=self.win.quit)
+        btnCancel = Button(
+            self.mainFrame,
+            text="Cancel",
+            command=self.win.quit
+        )
         btnCancel.grid(column=1, row=3)
 
     def authenticate(self):
