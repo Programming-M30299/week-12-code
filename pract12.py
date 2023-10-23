@@ -15,8 +15,8 @@ class LoginApp:
         self.message = StringVar()
         self.message.set("Enter username and password.")
 
+    def run(self):
         self.createWidgets()
-
         self.win.mainloop()
 
     def createWidgets(self):
@@ -64,4 +64,6 @@ class LoginApp:
             self.message.set("Login successful!")
 
 
-app = LoginApp()
+def main():
+    app = LoginApp()
+    app.run()
