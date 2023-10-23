@@ -13,10 +13,10 @@ class Calculator:
         self.num1 = IntVar()
         self.num2 = IntVar()
         self.result = StringVar()
-        self.result.set("Result will be here.")
+        self.result.set("Result: 0")
 
+    def run(self):
         self.createWidgets()
-
         self.win.mainloop()
 
     def createWidgets(self):
@@ -66,4 +66,6 @@ class Calculator:
         self.result.set(f"Result: {num1 * num2}")
 
 
-app = Calculator()
+def main():
+    calc = Calculator()
+    calc.run()
