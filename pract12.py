@@ -89,6 +89,3 @@ def main():
     }
     app = LoginApp(companyLoginDetails)
     app.run()
-
-
-main()
