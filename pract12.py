@@ -50,8 +50,7 @@ class LoginApp:
         entryPassword = Entry(
             self.mainFrame,
             width=25,
-            textvariable=self.password,
-            show='*'
+            textvariable=self.password
         )
         entryPassword.grid(column=1, row=2)
 
