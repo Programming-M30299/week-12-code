@@ -63,7 +63,9 @@ class Calculator:
     def multiply(self):
         num1 = self.num1.get()
         num2 = self.num2.get()
-        self.result.set(f"Result: {num1 * num2}")
+
+        result = num1 * num2
+        self.result.set(f"Result: {result}")
 
 
 def main():
