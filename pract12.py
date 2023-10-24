@@ -2,7 +2,8 @@ from tkinter import *
 
 
 class LoginApp:
-    def __init__(self):
+    def __init__(self, loginDetails):
+        self.loginDetails = loginDetails
         self.win = Tk()
         self.win.title("Employee Login")
         self.win.geometry("250x100")
@@ -72,21 +73,23 @@ class LoginApp:
         username = self.userName.get()
         password = self.password.get()
 
-        loginDetails = {
-            "YousefD": "VenterboSS",
-            "SergeiT": "25Operyu",
-            "Yemi": "Idec704",
-            "WernerS": "IAmMel12"
-        }
-
-        if username not in loginDetails:
+        if username not in self.loginDetails:
             self.message.set("Username not found.")
-        elif loginDetails[username] != password:
+        elif self.loginDetails[username] != password:
             self.message.set("Incorrect password.")
         else:
             self.message.set("Login successful!")
 
 
 def main():
-    app = LoginApp()
+    companyLoginDetails = {
+        "YousefD": "VenterboSS",
+        "SergeiT": "25Operyu",
+        "Yemi": "Idec704",
+        "WernerS": "IAmMel12"
+    }
+    app = LoginApp(companyLoginDetails)
     app.run()
+
+
+main()
