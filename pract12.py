@@ -65,7 +65,7 @@ class LoginApp:
         btnCancel = Button(
             self.mainFrame,
             text="Cancel",
-            command=self.win.quit
+            command=self.win.destroy
         )
         btnCancel.grid(column=1, row=3)
 
