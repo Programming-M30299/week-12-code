@@ -2,7 +2,7 @@ from tkinter import *
 
 
 class LoginApp:
-    
+
     def __init__(self, loginDetails):
         self.loginDetails = loginDetails
         self.win = Tk()
@@ -90,3 +90,6 @@ def main():
     }
     app = LoginApp(companyLoginDetails)
     app.run()
+
+
+main()
