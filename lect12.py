@@ -1,4 +1,4 @@
-from tkinter import *
+from tkinter import Tk, Frame, Label, Entry, Button, IntVar, StringVar
 
 
 class Calculator:
