@@ -8,8 +8,8 @@ class Calculator:
         self.win.title("Calculator")
         self.win.geometry("200x150")
 
-        self.mainFrame = Frame(self.win)
-        self.mainFrame.pack(padx=10, pady=10)
+        self.main_frame = Frame(self.win)
+        self.main_frame.pack(padx=10, pady=10)
 
         self.num1 = IntVar()
         self.num2 = IntVar()
@@ -17,49 +17,49 @@ class Calculator:
         self.result.set("Result: 0")
 
     def run(self):
-        self.createWidgets()
+        self.create_widgets()
         self.win.mainloop()
 
-    def createWidgets(self):
-        lblNum1 = Label(self.mainFrame, text="Number 1:")
-        lblNum1.pack()
+    def create_widgets(self):
+        lbl_num1 = Label(self.main_frame, text="Number 1:")
+        lbl_num1.pack()
 
-        entryNum1 = Entry(
-            self.mainFrame,
+        entry_num1 = Entry(
+            self.main_frame,
             width=20,
             textvariable=self.num1
         )
-        entryNum1.pack()
+        entry_num1.pack()
 
-        lblNum2 = Label(self.mainFrame, text="Number 2:")
-        lblNum2.pack()
+        lbl_num2 = Label(self.main_frame, text="Number 2:")
+        lbl_num2.pack()
 
-        entryNum2 = Entry(
-            self.mainFrame,
+        entry_num2 = Entry(
+            self.main_frame,
             width=20,
             textvariable=self.num2
         )
-        entryNum2.pack()
+        entry_num2.pack()
 
-        lblResult = Label(
-            self.mainFrame,
+        lbl_result = Label(
+            self.main_frame,
             textvariable=self.result
         )
-        lblResult.pack()
+        lbl_result.pack()
 
-        btnMultiply = Button(
-            self.mainFrame,
+        btn_multiply = Button(
+            self.main_frame,
             text="Multiply",
             command=self.multiply
         )
-        btnMultiply.pack(side="left")
+        btn_multiply.pack(side="left")
 
-        btnClose = Button(
-            self.mainFrame,
+        btn_close = Button(
+            self.main_frame,
             text="Close",
             command=self.win.destroy
         )
-        btnClose.pack(side="right")
+        btn_close.pack(side="right")
 
     def multiply(self):
         num1 = self.num1.get()
