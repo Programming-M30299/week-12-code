@@ -47,12 +47,12 @@ class Calculator:
         )
         lbl_result.pack()
 
-        btn_multiply = Button(
+        btn_mult = Button(
             self.main_frame,
             text="Multiply",
             command=self.multiply
         )
-        btn_multiply.pack(side="left")
+        btn_mult.pack(side="left")
 
         btn_close = Button(
             self.main_frame,
