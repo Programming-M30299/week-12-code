@@ -21,8 +21,8 @@ class Calculator:
         self.win.mainloop()
 
     def create_widgets(self):
-        lbl_num1 = Label(self.main_frame, text="Number 1:")
-        lbl_num1.pack()
+        label_num1 = Label(self.main_frame, text="Number 1:")
+        label_num1.pack()
 
         entry_num1 = Entry(
             self.main_frame,
@@ -31,8 +31,8 @@ class Calculator:
         )
         entry_num1.pack()
 
-        lbl_num2 = Label(self.main_frame, text="Number 2:")
-        lbl_num2.pack()
+        label_num2 = Label(self.main_frame, text="Number 2:")
+        label_num2.pack()
 
         entry_num2 = Entry(
             self.main_frame,
@@ -41,18 +41,18 @@ class Calculator:
         )
         entry_num2.pack()
 
-        lbl_result = Label(
+        label_result = Label(
             self.main_frame,
             textvariable=self.result
         )
-        lbl_result.pack()
+        label_result.pack()
 
-        btn_mult = Button(
+        button_mult = Button(
             self.main_frame,
             text="Multiply",
             command=self.multiply
         )
-        btn_mult.pack(side="left")
+        button_mult.pack(side="left")
 
         btn_close = Button(
             self.main_frame,
