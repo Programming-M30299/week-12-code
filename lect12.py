@@ -21,7 +21,10 @@ class Calculator:
         self.win.mainloop()
 
     def create_widgets(self):
-        label_num1 = Label(self.main_frame, text="Number 1:")
+        label_num1 = Label(
+            self.main_frame,
+            text="Number 1:"
+        )
         label_num1.pack()
 
         entry_num1 = Entry(
@@ -31,7 +34,10 @@ class Calculator:
         )
         entry_num1.pack()
 
-        label_num2 = Label(self.main_frame, text="Number 2:")
+        label_num2 = Label(
+            self.main_frame,
+            text="Number 2:"
+        )
         label_num2.pack()
 
         entry_num2 = Entry(
@@ -54,12 +60,12 @@ class Calculator:
         )
         button_mult.pack(side="left")
 
-        btn_close = Button(
+        button_close = Button(
             self.main_frame,
             text="Close",
             command=self.win.destroy
         )
-        btn_close.pack(side="right")
+        button_close.pack(side="right")
 
     def multiply(self):
         num1 = self.num1.get()
