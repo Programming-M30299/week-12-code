@@ -85,8 +85,8 @@ def main():
     company_login_details = {
         "YousefD": "VenterboSS",
         "SergeiT": "25Operyu",
-        "Yemi": "Idec704",
-        "WernerS": "IAmMel12"
+        "YemiO": "Idec704",
+        "WinonaS": "IAmMel12"
     }
     app = LoginApp(company_login_details)
     app.run()
