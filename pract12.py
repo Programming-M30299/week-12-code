@@ -62,12 +62,12 @@ class LoginApp:
         )
         button_sign_in.grid(column=0, row=3)
 
-        btn_cancel = Button(
+        button_cancel = Button(
             self.main_frame,
             text="Cancel",
             command=self.win.destroy
         )
-        btn_cancel.grid(column=1, row=3)
+        button_cancel.grid(column=1, row=3)
 
     def authenticate(self):
         username = self.user_name.get()
