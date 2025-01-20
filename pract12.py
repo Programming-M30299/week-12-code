@@ -22,18 +22,18 @@ class LoginApp:
         self.win.mainloop()
 
     def create_widgets(self):
-        lbl_message = Label(
+        label_message = Label(
             self.main_frame,
             textvariable=self.message,
             width=30
         )
-        lbl_message.grid(column=0, row=0, columnspan=2)
+        label_message.grid(column=0, row=0, columnspan=2)
 
-        lbl_user_name = Label(
+        label_user_name = Label(
             self.main_frame,
             text="Username:"
         )
-        lbl_user_name.grid(column=0, row=1)
+        label_user_name.grid(column=0, row=1)
 
         entry_user_name = Entry(
             self.main_frame,
@@ -42,11 +42,11 @@ class LoginApp:
         )
         entry_user_name.grid(column=1, row=1)
 
-        lbl_password = Label(
+        label_password = Label(
             self.main_frame,
             text="Password:"
         )
-        lbl_password.grid(column=0, row=2)
+        label_password.grid(column=0, row=2)
 
         entry_password = Entry(
             self.main_frame,
@@ -55,12 +55,12 @@ class LoginApp:
         )
         entry_password.grid(column=1, row=2)
 
-        btn_sign_in = Button(
+        button_sign_in = Button(
             self.main_frame,
             text="Sign In",
             command=self.authenticate
         )
-        btn_sign_in.grid(column=0, row=3)
+        button_sign_in.grid(column=0, row=3)
 
         btn_cancel = Button(
             self.main_frame,
