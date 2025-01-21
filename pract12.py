@@ -12,7 +12,7 @@ class LoginApp:
         self.main_frame = Frame(self.win)
         self.main_frame.grid(column=0, row=0)
 
-        self.user_name = StringVar()
+        self.username = StringVar()
         self.password = StringVar()
         self.message = StringVar()
         self.message.set("Enter username and password.")
@@ -29,18 +29,18 @@ class LoginApp:
         )
         label_message.grid(column=0, row=0, columnspan=2)
 
-        label_user_name = Label(
+        label_username = Label(
             self.main_frame,
             text="Username:"
         )
-        label_user_name.grid(column=0, row=1)
+        label_username.grid(column=0, row=1)
 
-        entry_user_name = Entry(
+        entry_username = Entry(
             self.main_frame,
             width=25,
-            textvariable=self.user_name
+            textvariable=self.username
         )
-        entry_user_name.grid(column=1, row=1)
+        entry_username.grid(column=1, row=1)
 
         label_password = Label(
             self.main_frame,
@@ -70,7 +70,7 @@ class LoginApp:
         button_cancel.grid(column=1, row=3)
 
     def authenticate(self):
-        username = self.user_name.get()
+        username = self.username.get()
         password = self.password.get()
 
         if username not in self.login_details:
